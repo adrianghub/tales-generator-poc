@@ -13,6 +13,6 @@ PoC - console app crafts tales based on a given subject. Creates a list of chapt
 
 ## Tech 
 
-local db: sqlite
-orm: sequelize
-prompt: openai chat completion api
+- local db: sqlite
+- orm: sequelize
+- prompt: openai chat completion api
