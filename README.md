@@ -10,3 +10,9 @@ PoC - console app crafts tales based on a given subject. Creates a list of chapt
 **Efficient Data Storage**: All your data is securely stored in a SQLite database located at project_root/tasks.db, ensuring reliable and persistent storage.
 
 **Convenient Export Functionality**: Easily export your generated story to a TXT file located at project_root/output.txt, providing a convenient way to save and share your creations.
+
+## Tech 
+
+local db: sqlite
+orm: sequelize
+prompt: openai chat completion api
