@@ -189,33 +189,34 @@ const printMenu = () => {
   console.log("0. Quit");
 };
 
-const handleUserChoice = (userChoice) => {
+const handleUserChoice = async (userChoice) => {
   switch (userChoice) {
     case "1":
-      generateChapters();
+      await generateChapters();
       break;
     case "2":
-      generateParagraphs();
+      await generateParagraphs();
       break;
     case "3":
-      showSavedChapters();
+      await showSavedChapters();
       break;
     case "4":
-      clearSavedChapters();
+      await clearSavedChapters();
       break;
     case "5":
-      exportToTxt();
+      await exportToTxt();
       break;
     case "0":
       console.log("Goodbye!");
       db.close();
       rl.close();
-      break;
+      return;
     default:
       console.log("Invalid choice!");
-      rl.close();
       break;
   }
+  printMenu();
+  rl.question('> ', handleUserChoice);
 };
 
 const main = async () => {
@@ -223,9 +224,7 @@ const main = async () => {
 
   printMenu();
 
-  rl.question('> ', (userChoice) => {
-    handleUserChoice(userChoice);
-  });
+  rl.question('> ', handleUserChoice);
 };
 
 main();
